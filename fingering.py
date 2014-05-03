@@ -1,5 +1,10 @@
+#Converts a txt file containing a list of notes into an image
+#with the corresponding fingering images
+#Inputs: txt file name
+
 from PIL import Image
 import math
+import sys
 
 #Definitions
 iHeigth = 300
@@ -22,7 +27,7 @@ do2 = Image.open("Notes/do2.jpg")
 dec = {'b0':si0, 'c':do, 'd':re, 'e':mi, 'f':fa, 'g':sol, 'a':la, 'b':si, 'c2':do2}
 
 #Open & Read original file
-f = open('Example/Carolina.txt', 'r')
+f = open(sys.argv[1], 'r')
 fname = f.name.split('.')
 fname = fname[0]
 notes = f.read().split()

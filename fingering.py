@@ -9,7 +9,7 @@ import sys
 #Definitions
 iHeigth = 300
 iWidth = 150
-iGridWidth = 6.0 #items
+iGridWidth = 8.0 #items
 i = 0 #counts the current note index
 
 #Open fingering images
@@ -35,7 +35,7 @@ notes = f.read().split()
 #Generate output file
 iOutHeigth = int(math.ceil(len(notes) / iGridWidth)) * iHeigth
 iOutWidth = int(150 * iGridWidth)
-out = Image.new("RGB",(iOutWidth ,iOutHeigth))
+out = Image.new("RGB",(iOutWidth ,iOutHeigth),0xFFFFFF) #init white background
 
 #Go over the notes list and paste the corresponding images 
 #inside the corresponding place of the output file
